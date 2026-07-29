@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+    - name : raw
+      database: FRAUD_DETECTION_DB
+      schema: RAW
+
+      tables:
+        - name: PAYSIM_RAW

@@ -1,0 +1,29 @@
+name: 'fraud_prediction_dbt'
+version: '1.0.0'
+
+profile: 'fraud_prediction_dbt'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:        
+  - "target"
+  - "dbt_packages"
+
+models:
+  fraud_prediction_dbt:
+    silver:
+      +schema: SILVER
+      +materialized: view
+    
+    gold:
+      +schema: GOLD
+      +materialized: view
+    
+    analysis:
+      +schema: SILVER
+      +materialized: view
